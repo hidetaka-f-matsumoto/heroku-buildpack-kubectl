@@ -12,5 +12,5 @@ Configuration:
 ```bash
 heroku buildpacks:add heroku-community/kubectl
 
-heroku config:set KUBECONFIG=$(base64 configfile)
+heroku config:set KUBECONFIG_CONTENT=$(base64 configfile)
 ```
