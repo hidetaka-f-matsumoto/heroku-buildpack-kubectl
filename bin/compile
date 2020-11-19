@@ -71,8 +71,8 @@ mkdir -p "$BUILD_DIR/.profile.d"
 cat > "$BUILD_DIR/.profile.d/kubectl.sh" <<'PROFILE'
 export PATH="$HOME/.heroku/kubectl/bin:$PATH"
 
-if [ ! -z "$KUBECONFIG" ]; then
+if [ ! -z "$KUBECONFIG_CONTENT" ]; then
     mkdir -p "$HOME/.kube"
-    echo "$KUBECONFIG" | base64 -d > "$HOME/.kube/config"
+    echo "$KUBECONFIG_CONTENT" | base64 -d > "$HOME/.kube/config"
 fi
 PROFILE
